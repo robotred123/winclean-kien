@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Repair system using Dismis cleanup image</Name>
+  <Host>Cmd</Host>
+  
+  <Code>dism /Online /Quiet /Cleanup-image /Restorehealth</Code>
+</Script>

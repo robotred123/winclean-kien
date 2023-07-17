@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Remove WordPad</Name>
+  <Host>Cmd</Host>
+  <I
+  <Code>DISM /Online /Remove-Capability /CapabilityName:Microsoft.Windows.WordPad~~~~0.0.1.0</Code>
+</Script>

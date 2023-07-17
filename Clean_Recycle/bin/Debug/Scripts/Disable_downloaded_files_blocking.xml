@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable downloaded files blocking</Name>
+  <Host>Regedit</Host>
+  <Code>Windows Registry Editor Version 5.00
+
+[HKEYCURRENTUSER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Attachments]
+"SaveZoneInformation"=dword:00000001</Code>
+</Script>

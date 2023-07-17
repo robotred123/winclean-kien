@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Clear File Explorer history</Name>
+  <Host>Cmd</Host>
+  <Code>Del /F /Q %APPDATA%\Microsoft\Windows\Recent\*
+Del /F /Q %APPDATA%\Microsoft\Windows\Recent\AutomaticDestinations\*
+Del /F /Q %APPDATA%\Microsoft\Windows\Recent\CustomDestinations\*
+REG Delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\RunMRU /VA /F
+REG Delete HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\TypedPaths /VA /F</Code>
+</Script>

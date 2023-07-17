@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable network and business services</Name>
+  <Host>Cmd</Host>
+  <Code>sc config TrkWks start= disabled
+sc config lmhosts start= disabled
+sc config NetTcpPortSharing start= disabled
+sc config Netlogon start= disabled
+sc config RasMan start= disabled
+sc config RasAuto start= disabled
+sc config RemoteAccess start= disabled
+sc config MSiSCSI start= disabled
+sc config SessionEnv start= disabled
+sc config SmsRouter start= disabled
+sc config RemoteRegistry start= disabled
+sc config workfolderssvc start= disabled
+sc config TlntSvr start= disabled
+sc config ssh-agent start= disabled</Code>
+</Script>

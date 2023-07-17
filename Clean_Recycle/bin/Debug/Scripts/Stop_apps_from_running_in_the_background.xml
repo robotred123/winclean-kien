@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+ <Name>Stop apps from running in the background</Name>
+  <Host>Regedit</Host>
+  
+  <Code>Windows Registry Editor Version 5.00
+
+[HKEYCURRENTUSER\SOFTWARE\Microsoft\Windows\CurrentVersion\BackgroundAccessApplications]
+"GlobalUserDisabled"=dword:00000001</Code>
+</Script>

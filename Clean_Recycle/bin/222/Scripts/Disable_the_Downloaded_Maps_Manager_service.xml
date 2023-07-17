@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable the Downloaded Maps Manager service</Name> 
+  <Host>Cmd</Host>
+
+  <Code>sc config MapsBroker start= disabled</Code>
+</Script>

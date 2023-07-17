@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+ <Name>Show seconds in taskbar clock</Name>
+  <Host>Regedit</Host>
+ 
+  <Code>Windows Registry Editor Version 5.00
+
+[HKEYCURRENTUSER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"ShowSecondsInSystemClock"=dword:00000001</Code>
+</Script>

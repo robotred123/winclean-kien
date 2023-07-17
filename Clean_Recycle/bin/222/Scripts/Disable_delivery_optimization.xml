@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable delivery optimization</Name>
+  <Host>Regedit</Host>
+  <Code>Windows Registry Editor Version 5.00
+
+[HKEYLOCALMACHINE\SYSTEM\CurrentControlSet\Services\DoSvc]
+"Start"=dword:00000004</Code>
+</Script>

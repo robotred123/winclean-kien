@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Run the System File Checker tool</Name>
+  <Host>Cmd</Host>
+
+  <Code>sfc /scannow</Code>
+</Script>

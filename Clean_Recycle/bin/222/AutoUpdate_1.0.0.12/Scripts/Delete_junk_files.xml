@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Delete junk files</Name>
+  <Host>Cmd</Host>
+  <Code>for /F "skip=1" %%C in ('wmic Volume where "DriveLetter is not Null" get DriveLetter') do for /F %%D in ("%%C") do cd /d %%D &amp; del /f /s /q *.log,*.etl,*.lck,*.tmp,*.temp,*.dmp</Code>
+</Script>

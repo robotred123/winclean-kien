@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable Hyper-services</Name>
+  <Host>Cmd</Host>
+  <Code>sc config vmicshutdown start= disabled
+sc config vmicrdv start= disabled
+sc config vmicvmsession start= disabled
+sc config vmicheartbeat start= disabled
+sc config vmictimesync start= disabled
+sc config vmickvpexchange start= disabled
+sc config vmicguestinterface start= disabled
+sc config gencounter start= disabled
+sc config vmgid start= disabled
+sc config storflt start= disabled
+sc config vmicvss start= disabled</Code>
+</Script>

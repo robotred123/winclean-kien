@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Remove recycle</Name>
+  <Host>Cmd</Host>
+  <Code>rmdir /s /q %systemdrive%\$Recycle.bin</Code>
+</Script>

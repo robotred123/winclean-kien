@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable the BitLocker Drive Encryption service</Name>
+  <Host>Cmd</Host>
+  
+  <Code>sc config BDESVC start= disabled</Code>
+</Script>

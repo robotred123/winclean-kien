@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Aggressive disk cleaning</Name>
+  <Host>Cmd</Host>
+  <Code>cd /d "%temp%"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%systemdrive%\temp"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\temp"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\prefetch"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\system32\dllcache"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\Logs"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\SoftwareDistribution\Download"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\WinSXS\Backup"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%windir%\servicing\LCU"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%userprofile%\Recent"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%userprofile%\Local Settings\History"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%userprofile%\Local Settings\Temporary Internet Files"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%userprofile%\Local Settings\Temp"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%userprofile%\Recent"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *
+
+cd /d "%userprofile%\Cookies"
+takeown  /r /d o /f *
+icacls * /t /c /grant:r "%username%":F
+del /f /s /q *</Code>
+</Script>

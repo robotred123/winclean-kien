@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Disable Bluetooth services</Name>
+  <Host>Cmd</Host>
+  <Code>sc config BthAvctpSvc start= disabled
+sc config BTAGService start= disabled
+sc config BthAvrcpTg start= disabled
+sc config RFCOMM start= disabled
+sc config BthEnum start= disabled
+sc config bthhfhid start= disabled
+sc config BthHFSrv start= disabled
+sc config BthLEEnum start= disabled
+sc config BTHMODEM start= disabled
+sc config BTHPORT start= disabled
+sc config BthMini start= disabled
+sc config BTHUSB start= disabled
+sc config bthserv start= disabled
+sc config BluetoothUserService start= disabled
+sc config BthA2dp start= disabled
+sc config Microsoft_Bluetooth_AvrcpTransport start= disabled
+sc config BthHFEnum start= disabled
+sc config HidBth start= disabled</Code>
+</Script>

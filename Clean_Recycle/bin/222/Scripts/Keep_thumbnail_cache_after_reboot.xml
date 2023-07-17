@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Keep thumbnail cache after reboot</Name>
+  <Host>Regedit</Host>
+
+  <Code>Windows Registry Editor Version 5.00
+[HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Thumbnail Cache]
+"Autorun"=dword:00000000
+[HKLM\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\VolumeCaches\Thumbnail Cache]
+"Autorun"=dword:00000000</Code>
+</Script>

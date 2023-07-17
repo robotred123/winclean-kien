@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Clear event logs</Name>
+  <Host>PowerShell</Host>
+  <Code>Import-Module Microsoft.PowerShell.Management
+Get-EventLog -LogName * | ForEach { Clear-EventLog $_.Log }</Code>
+</Script>

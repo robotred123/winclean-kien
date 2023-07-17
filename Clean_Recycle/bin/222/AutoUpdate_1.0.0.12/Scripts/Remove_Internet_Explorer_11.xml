@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Remove Internet Explorer 11</Name>
+  <Host>Cmd</Host>
+ 
+  <Code>DISM /Online /Remove-Capability /CapabilityName:Browser.InternetExplorer~~~~0.0.11.0</Code>
+</Script>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Run Component Store cleanup</Name>
+  <Host>Cmd</Host>
+ 
+  <Code>dism /online /cleanup-image /StartComponentCleanup /ResetBase</Code>
+</Script>

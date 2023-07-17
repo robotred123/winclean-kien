@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Script>
+  <Name>Delete all system restore points</Name>
+  <Host>PowerShell</Host>
+  <Code>vssadmin delete shadows /all /quiet</Code>
+</Script>
