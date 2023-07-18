@@ -240,6 +240,7 @@ namespace Clean_Recycle
                 cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
                 cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
                 cmd.Parameters.Add(new SqlParameter("@Units_c3", Units_c3));
+                cmd.Parameters.Add(new SqlParameter("@Units_c4", ""));
                 cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
                 cmd.Parameters.Add(new SqlParameter("@Computer_name", Computer_name));
                 cmd.Parameters.Add(new SqlParameter("@MAC", MAC));
@@ -261,6 +262,8 @@ namespace Clean_Recycle
                 cmd.Parameters.Add(new SqlParameter("@MaCB", MaCB));
                 cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
                 cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
+                cmd.Parameters.Add(new SqlParameter("@Units_c3", ""));
+                cmd.Parameters.Add(new SqlParameter("@Units_c4", ""));
                 cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
                 cmd.Parameters.Add(new SqlParameter("@Computer_name", Computer_name));
                 cmd.Parameters.Add(new SqlParameter("@MAC", MAC));
@@ -286,6 +289,52 @@ namespace Clean_Recycle
                 cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
                 cmd.Parameters.Add(new SqlParameter("@Units_c3", Units_c3));
                 cmd.Parameters.Add(new SqlParameter("@Units_c4", Units_c4));
+                cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
+                cmd.Parameters.Add(new SqlParameter("@Computer_name", Computer_name));
+                cmd.Parameters.Add(new SqlParameter("@MAC", MAC));
+                cmd.Parameters.Add(new SqlParameter("@Position", Position));
+                cmd.Parameters.Add(new SqlParameter("@Auto_start", Auto_Start));
+                da = new SqlDataAdapter(cmd); dt = new DataTable();
+                try { da.Fill(dt); } catch (Exception ex) { }
+                conn.Close();
+            }
+        }
+
+        public static void Update_Dm_CanboC3(string MaCB, string Units_c1, string Units_c2, string Units_c3, string Hoten, string Computer_name, string MAC, string Position, string Auto_Start)
+        {
+            if (conn.State.ToString() == "Closed") { conn = Connect_SQL.GetConnetion(); }
+            using (conn)
+            {
+                cmd = new SqlCommand("sp_Update_Dm_Canbo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@MaCB", MaCB));
+                cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
+                cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
+                cmd.Parameters.Add(new SqlParameter("@Units_c3", Units_c3));
+                cmd.Parameters.Add(new SqlParameter("@Units_c4", ""));
+                cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
+                cmd.Parameters.Add(new SqlParameter("@Computer_name", Computer_name));
+                cmd.Parameters.Add(new SqlParameter("@MAC", MAC));
+                cmd.Parameters.Add(new SqlParameter("@Position", Position));
+                cmd.Parameters.Add(new SqlParameter("@Auto_start", Auto_Start));
+                da = new SqlDataAdapter(cmd); dt = new DataTable();
+                try { da.Fill(dt); } catch (Exception ex) { }
+                conn.Close();
+            }
+        }
+
+        public static void Update_Dm_CanboC2(string MaCB, string Units_c1, string Units_c2, string Hoten, string Computer_name, string MAC, string Position, string Auto_Start)
+        {
+            if (conn.State.ToString() == "Closed") { conn = Connect_SQL.GetConnetion(); }
+            using (conn)
+            {
+                cmd = new SqlCommand("sp_Update_Dm_Canbo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@MaCB", MaCB));
+                cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
+                cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
+                cmd.Parameters.Add(new SqlParameter("@Units_c3", ""));
+                cmd.Parameters.Add(new SqlParameter("@Units_c4", ""));
                 cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
                 cmd.Parameters.Add(new SqlParameter("@Computer_name", Computer_name));
                 cmd.Parameters.Add(new SqlParameter("@MAC", MAC));

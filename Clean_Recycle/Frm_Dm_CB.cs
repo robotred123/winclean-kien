@@ -88,7 +88,7 @@ namespace Clean_Recycle
         public string ID_Ma()
         {
             Select_SQL.Load_MaCB();
-            string ap = "TB";
+            string ap = "CB";
             string ma = Connect_SQL.mac;
             ma = ma.Replace("-",string.Empty);
 
@@ -130,14 +130,24 @@ namespace Clean_Recycle
                 DialogResult lkResult = MessageBox.Show("Máy tính đã được khai báo!\n Đồng chí có đồng ý cập nhật?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (lkResult == DialogResult.Yes)
                 {
-                    Select_SQL.Update_Dm_Canbo(dt_dmcb.Rows[0]["MaCB"].ToString(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), cb_dvc4.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString()); Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
+                    if (dt_dvc4.Rows.Count > 0) {
+                        Select_SQL.Update_Dm_Canbo(dt_dmcb.Rows[0]["MaCB"].ToString(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), cb_dvc4.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString()); Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
+                    }
+                    else if (dt_dvc3.Rows.Count > 0) {
+                        Select_SQL.Update_Dm_CanboC3(dt_dmcb.Rows[0]["MaCB"].ToString(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString()); Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
+                    }
+                    else if (dt_dvc2.Rows.Count > 0)
+                    {
+                        Select_SQL.Update_Dm_CanboC2(dt_dmcb.Rows[0]["MaCB"].ToString(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString()); Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
+                    }
                     MessageBox.Show("Cập nhật thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
             }
             else
             {
-                Select_SQL.Insert_Dm_Canbo(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), cb_dvc4.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
-               /*
+                if (dt_dvc4.Rows.Count > 0) {
+                    Select_SQL.Insert_Dm_Canbo(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), cb_dvc4.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
+                }
                 else if (dt_dvc3.Rows.Count > 0)
                 {
                     Select_SQL.Insert_Dm_CanboC3(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
@@ -145,7 +155,7 @@ namespace Clean_Recycle
                 else if (dt_dvc2.Rows.Count > 0)
                 {
                     Select_SQL.Insert_Dm_CanboC2(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
-                }*/
+                }
                 Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
                 this.Hide();
                 FrmHome frm_ = new FrmHome();

@@ -26,7 +26,7 @@ namespace Clean_Recycle
             };
             timer.Elapsed += delegate
             {
-                AutoUpdater.Start("http://172.16.150.35:3000/update.xml");
+                AutoUpdater.Start("ftp:\\172.16.150.222\\update.xml");
             };
             timer.Start();
             check_auto();
@@ -44,7 +44,7 @@ namespace Clean_Recycle
         public static void check_auto()
         {
             Thread.Sleep(9000);
-            AutoUpdater.Start("http://172.16.150.35:3000/update.xml");
+            AutoUpdater.Start("ftp:\\172.16.150.222\\update.xml");
         }
     }
 }
