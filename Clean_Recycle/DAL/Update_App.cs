@@ -21,12 +21,12 @@ namespace Clean_Recycle
         {
             if (args.IsUpdateAvailable)
             {
-                DialogResult dialogResult;
+/*                DialogResult dialogResult;
                 dialogResult =
                         MessageBox.Show("Phần mềm của bạn đã có phiên bản mới " + args.CurrentVersion + ".\nPhiên bản bạn đang sử dụng hiện tại " + args.InstalledVersion + ".\nBạn có muốn cập nhật phần mềm không?", "Cập nhật phần mềm", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (dialogResult.Equals(DialogResult.Yes) || dialogResult.Equals(DialogResult.OK))
-                {
+                {*/
                     try
                     {
                         if (AutoUpdater.DownloadUpdate(args))
@@ -46,7 +46,7 @@ namespace Clean_Recycle
                         MessageBox.Show(exception.Message, exception.GetType().ToString(), MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
-                }
+/*                }*/
             }
             /*else
             {

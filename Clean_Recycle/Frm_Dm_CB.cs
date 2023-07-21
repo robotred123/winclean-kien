@@ -145,17 +145,24 @@ namespace Clean_Recycle
             }
             else
             {
-                if (dt_dvc4.Rows.Count > 0) {
+                if (dt_dvc4 != null) {
+                    if (dt_dvc4.Rows.Count > 0 & dt_dvc3.Rows.Count > 0 & dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0) { 
                     Select_SQL.Insert_Dm_Canbo(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), cb_dvc4.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
+                    }
                 }
-                else if (dt_dvc3.Rows.Count > 0)
+                else if (dt_dvc3 != null & dt_dvc3.Rows.Count > 0 & dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0)
                 {
                     Select_SQL.Insert_Dm_CanboC3(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
                 }
-                else if (dt_dvc2.Rows.Count > 0)
+                else if (dt_dvc2 != null & dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0)
                 {
                     Select_SQL.Insert_Dm_CanboC2(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
                 }
+                else if (dt_dvc1 != null & dt_dvc1.Rows.Count > 0)
+                {
+                    Select_SQL.Insert_Dm_CanboC1(ID_Ma(), cb_dvc1.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
+                }
+                else { MessageBox.Show("Cập nhật thất bại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question); }
                 Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
                 this.Hide();
                 FrmHome frm_ = new FrmHome();

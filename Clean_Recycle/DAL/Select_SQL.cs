@@ -128,7 +128,7 @@ namespace Clean_Recycle
             if (conn.State.ToString() == "Closed") { conn = Connect_SQL.GetConnetion(); }
             using (conn)
             {
-                cmd = new SqlCommand("sp_Select_Dm_Canbo", conn);
+                cmd = new SqlCommand("sp_Select_Dm_Canbo_New", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@MAC", MAC));
                 da = new SqlDataAdapter(cmd); dt = new DataTable();
@@ -262,6 +262,28 @@ namespace Clean_Recycle
                 cmd.Parameters.Add(new SqlParameter("@MaCB", MaCB));
                 cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
                 cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
+                cmd.Parameters.Add(new SqlParameter("@Units_c3", ""));
+                cmd.Parameters.Add(new SqlParameter("@Units_c4", ""));
+                cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
+                cmd.Parameters.Add(new SqlParameter("@Computer_name", Computer_name));
+                cmd.Parameters.Add(new SqlParameter("@MAC", MAC));
+                cmd.Parameters.Add(new SqlParameter("@Position", Position));
+                cmd.Parameters.Add(new SqlParameter("@Auto_start", Auto_Start));
+                da = new SqlDataAdapter(cmd); dt = new DataTable();
+                try { da.Fill(dt); MessageBox.Show("Thêm mới thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question); } catch (Exception ex) { }
+                conn.Close();
+            }
+        }
+        public static void Insert_Dm_CanboC1(string MaCB, string Units_c1, string Hoten, string Computer_name, string MAC, string Position, string Auto_Start)
+        {
+            if (conn.State.ToString() == "Closed") { conn = Connect_SQL.GetConnetion(); }
+            using (conn)
+            {
+                cmd = new SqlCommand("sp_insert_Dm_Canbo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(new SqlParameter("@MaCB", MaCB));
+                cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
+                cmd.Parameters.Add(new SqlParameter("@Units_c2", ""));
                 cmd.Parameters.Add(new SqlParameter("@Units_c3", ""));
                 cmd.Parameters.Add(new SqlParameter("@Units_c4", ""));
                 cmd.Parameters.Add(new SqlParameter("@Hoten", Hoten));
