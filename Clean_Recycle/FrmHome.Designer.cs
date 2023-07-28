@@ -30,73 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHome));
-            this.button1 = new System.Windows.Forms.Button();
-            this.CleanBtn = new System.Windows.Forms.Button();
-            this.lb_IPadd = new System.Windows.Forms.Label();
-            this.lb_MAC = new System.Windows.Forms.Label();
-            this.lb_Tempertature = new System.Windows.Forms.Label();
-            this.lb_NamePC = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.CleanBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.TestKeyboardBtn = new Guna.UI2.WinForms.Guna2Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.HtmlLbName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LbHtmlIP = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LbHtmlMac = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LbHtmlNamePC = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.LbHtmlVer = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.contextMenuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 173);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Test KeyBoard";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // CleanBtn
-            // 
-            this.CleanBtn.Location = new System.Drawing.Point(124, 173);
-            this.CleanBtn.Name = "CleanBtn";
-            this.CleanBtn.Size = new System.Drawing.Size(96, 38);
-            this.CleanBtn.TabIndex = 1;
-            this.CleanBtn.Text = "Clean PC";
-            this.CleanBtn.UseVisualStyleBackColor = true;
-            this.CleanBtn.Click += new System.EventHandler(this.CleanBtn_Click);
-            // 
-            // lb_IPadd
-            // 
-            this.lb_IPadd.AutoSize = true;
-            this.lb_IPadd.Location = new System.Drawing.Point(27, 46);
-            this.lb_IPadd.Name = "lb_IPadd";
-            this.lb_IPadd.Size = new System.Drawing.Size(0, 13);
-            this.lb_IPadd.TabIndex = 3;
-            // 
-            // lb_MAC
-            // 
-            this.lb_MAC.AutoSize = true;
-            this.lb_MAC.Location = new System.Drawing.Point(27, 89);
-            this.lb_MAC.Name = "lb_MAC";
-            this.lb_MAC.Size = new System.Drawing.Size(0, 13);
-            this.lb_MAC.TabIndex = 4;
-            // 
-            // lb_Tempertature
-            // 
-            this.lb_Tempertature.AutoSize = true;
-            this.lb_Tempertature.Location = new System.Drawing.Point(12, 107);
-            this.lb_Tempertature.Name = "lb_Tempertature";
-            this.lb_Tempertature.Size = new System.Drawing.Size(0, 13);
-            this.lb_Tempertature.TabIndex = 5;
-            // 
-            // lb_NamePC
-            // 
-            this.lb_NamePC.AutoSize = true;
-            this.lb_NamePC.Location = new System.Drawing.Point(27, 132);
-            this.lb_NamePC.Name = "lb_NamePC";
-            this.lb_NamePC.Size = new System.Drawing.Size(0, 13);
-            this.lb_NamePC.TabIndex = 6;
             // 
             // notifyIcon1
             // 
@@ -128,24 +78,119 @@
             this.normalToolStripMenuItem.Text = "Normal";
             this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.LbHtmlVer);
+            this.panel1.Controls.Add(this.LbHtmlNamePC);
+            this.panel1.Controls.Add(this.LbHtmlMac);
+            this.panel1.Controls.Add(this.LbHtmlIP);
+            this.panel1.Controls.Add(this.HtmlLbName);
+            this.panel1.Controls.Add(this.CleanBtn);
+            this.panel1.Controls.Add(this.TestKeyboardBtn);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(232, 243);
+            this.panel1.TabIndex = 1;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // CleanBtn
+            // 
+            this.CleanBtn.BorderRadius = 25;
+            this.CleanBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CleanBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CleanBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CleanBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CleanBtn.FillColor = System.Drawing.Color.MediumSlateBlue;
+            this.CleanBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CleanBtn.ForeColor = System.Drawing.Color.White;
+            this.CleanBtn.Location = new System.Drawing.Point(20, 149);
+            this.CleanBtn.Name = "CleanBtn";
+            this.CleanBtn.Size = new System.Drawing.Size(200, 40);
+            this.CleanBtn.TabIndex = 22;
+            this.CleanBtn.Text = "Clean PC";
+            this.CleanBtn.Click += new System.EventHandler(this.CleanBtn_Click);
+            // 
+            // TestKeyboardBtn
+            // 
+            this.TestKeyboardBtn.BorderRadius = 25;
+            this.TestKeyboardBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.TestKeyboardBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.TestKeyboardBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.TestKeyboardBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.TestKeyboardBtn.FillColor = System.Drawing.Color.MediumSlateBlue;
+            this.TestKeyboardBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TestKeyboardBtn.ForeColor = System.Drawing.Color.White;
+            this.TestKeyboardBtn.Location = new System.Drawing.Point(20, 195);
+            this.TestKeyboardBtn.Name = "TestKeyboardBtn";
+            this.TestKeyboardBtn.Size = new System.Drawing.Size(200, 40);
+            this.TestKeyboardBtn.TabIndex = 21;
+            this.TestKeyboardBtn.Text = "Test Keyboard";
+            this.TestKeyboardBtn.Click += new System.EventHandler(this.TestKeyboardBtn_Click);
+            // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(201, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 20);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
+            // HtmlLbName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 8;
+            this.HtmlLbName.BackColor = System.Drawing.Color.Transparent;
+            this.HtmlLbName.Location = new System.Drawing.Point(33, 43);
+            this.HtmlLbName.Name = "HtmlLbName";
+            this.HtmlLbName.Size = new System.Drawing.Size(64, 15);
+            this.HtmlLbName.TabIndex = 23;
+            this.HtmlLbName.Text = "LbHtmlName";
+            // 
+            // LbHtmlIP
+            // 
+            this.LbHtmlIP.BackColor = System.Drawing.Color.Transparent;
+            this.LbHtmlIP.Location = new System.Drawing.Point(33, 69);
+            this.LbHtmlIP.Name = "LbHtmlIP";
+            this.LbHtmlIP.Size = new System.Drawing.Size(46, 15);
+            this.LbHtmlIP.TabIndex = 24;
+            this.LbHtmlIP.Text = "LbHtmlIP";
+            // 
+            // LbHtmlMac
+            // 
+            this.LbHtmlMac.BackColor = System.Drawing.Color.Transparent;
+            this.LbHtmlMac.Location = new System.Drawing.Point(33, 95);
+            this.LbHtmlMac.Name = "LbHtmlMac";
+            this.LbHtmlMac.Size = new System.Drawing.Size(57, 15);
+            this.LbHtmlMac.TabIndex = 25;
+            this.LbHtmlMac.Text = "LbHtmlMac";
+            // 
+            // LbHtmlNamePC
+            // 
+            this.LbHtmlNamePC.BackColor = System.Drawing.Color.Transparent;
+            this.LbHtmlNamePC.Location = new System.Drawing.Point(33, 120);
+            this.LbHtmlNamePC.Name = "LbHtmlNamePC";
+            this.LbHtmlNamePC.Size = new System.Drawing.Size(78, 15);
+            this.LbHtmlNamePC.TabIndex = 26;
+            this.LbHtmlNamePC.Text = "LbHtmlNamePC";
+            // 
+            // LbHtmlVer
+            // 
+            this.LbHtmlVer.BackColor = System.Drawing.Color.Transparent;
+            this.LbHtmlVer.Location = new System.Drawing.Point(3, 3);
+            this.LbHtmlVer.Name = "LbHtmlVer";
+            this.LbHtmlVer.Size = new System.Drawing.Size(52, 15);
+            this.LbHtmlVer.TabIndex = 27;
+            this.LbHtmlVer.Text = "LbHtmlVer";
             // 
             // FrmHome
             // 
@@ -154,15 +199,9 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.ClientSize = new System.Drawing.Size(232, 243);
             this.ControlBox = false;
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lb_NamePC);
-            this.Controls.Add(this.lb_Tempertature);
-            this.Controls.Add(this.lb_MAC);
-            this.Controls.Add(this.lb_IPadd);
-            this.Controls.Add(this.CleanBtn);
-            this.Controls.Add(this.button1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Controls.Add(this.panel1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -172,25 +211,26 @@
             this.Text = "WinClean";
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button CleanBtn;
-        private System.Windows.Forms.Label lb_IPadd;
-        private System.Windows.Forms.Label lb_MAC;
-        private System.Windows.Forms.Label lb_Tempertature;
-        private System.Windows.Forms.Label lb_NamePC;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button TestKeyboardBtn;
+        private Guna.UI2.WinForms.Guna2Button CleanBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel HtmlLbName;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LbHtmlIP;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LbHtmlMac;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LbHtmlNamePC;
+        private Guna.UI2.WinForms.Guna2HtmlLabel LbHtmlVer;
     }
 }

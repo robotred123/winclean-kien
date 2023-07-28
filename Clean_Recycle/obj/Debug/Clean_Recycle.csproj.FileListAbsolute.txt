@@ -117,3 +117,4 @@ C:\Users\robot\OneDrive\Documents\GitHub\winclean-kien\Clean_Recycle\obj\Debug\C
 C:\Users\robot\OneDrive\Documents\GitHub\winclean-kien\Clean_Recycle\obj\Debug\Clean_Recycle.csproj.CopyComplete
 C:\Users\robot\OneDrive\Documents\GitHub\winclean-kien\Clean_Recycle\obj\Debug\Clean_Recycle.exe
 C:\Users\robot\OneDrive\Documents\GitHub\winclean-kien\Clean_Recycle\obj\Debug\Clean_Recycle.pdb
+C:\Users\robot\OneDrive\Documents\GitHub\winclean-kien\Clean_Recycle\obj\Debug\Clean_Recycle.Form1.resources

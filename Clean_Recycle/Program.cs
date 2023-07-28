@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Net.Sockets;
@@ -13,6 +14,7 @@ namespace Clean_Recycle
         private static string StrCon = ConfigurationManager.ConnectionStrings["connectSQL"].ToString();
         private static string[] ad = StrCon.Split(';', '=');
         private static string[] ac = ad[1].Split(',', ' ');
+        public static DataTable dtNameUser;
         [STAThread]
         static void Main()
         {
@@ -38,11 +40,13 @@ namespace Clean_Recycle
                 Stream stream = client.GetStream();
                 Connect_SQL.GetMacAddress();
                 Select_SQL.Load_Dm_Canbo(Connect_SQL.mac);
+                dtNameUser = Select_SQL.dt;
             }
             catch (Exception ex)
             {
-               // MessageBox.Show(ex.ToString());
-                MessageBox.Show("SOS!! Không kết nối được cơ sở dữ liệu!\n Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // MessageBox.Show(ex.ToString());
+                // MessageBox.Show("SOS!! Không kết nối được cơ sở dữ liệu!\n Vui lòng kiểm tra lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

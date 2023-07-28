@@ -12,7 +12,7 @@ namespace Clean_Recycle
     public class Connect_SQL
     {
         #region Create Dll
-        public static string mac, ipaddress, strComputerName;
+        public static string mac, ipaddress, strComputerName, strNameUser;
         private static SqlConnection con;
         private static SqlCommand cmd = new SqlCommand();
         private static SqlDataAdapter da = new SqlDataAdapter();

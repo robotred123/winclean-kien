@@ -31,8 +31,8 @@ namespace Clean_Recycle
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Clean));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this._nimRestore = new System.Windows.Forms.ToolStripMenuItem();
             this._nimMinimize = new System.Windows.Forms.ToolStripMenuItem();
             this._nimExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,10 +203,10 @@ namespace Clean_Recycle
             this.dataGV_Scripts.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGV_Scripts.Location = new System.Drawing.Point(0, 46);
             this.dataGV_Scripts.Name = "dataGV_Scripts";
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGV_Scripts.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGV_Scripts.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGV_Scripts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGV_Scripts.Size = new System.Drawing.Size(375, 508);
             this.dataGV_Scripts.TabIndex = 16;
@@ -233,8 +233,8 @@ namespace Clean_Recycle
             // 
             this.col_Name_policy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.col_Name_policy.DataPropertyName = "Name_policy";
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.col_Name_policy.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.col_Name_policy.DefaultCellStyle = dataGridViewCellStyle3;
             this.col_Name_policy.HeaderText = "Name Policy";
             this.col_Name_policy.Name = "col_Name_policy";
             this.col_Name_policy.ReadOnly = true;

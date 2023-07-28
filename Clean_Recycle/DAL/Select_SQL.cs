@@ -41,7 +41,14 @@ namespace Clean_Recycle
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@Units_c1", Units_c1));
                 da = new SqlDataAdapter(cmd); dt = new DataTable();
-                try { da.Fill(dt); Frm_Dm_CB.dt_dvc2 = dt; } catch (Exception ex) { }
+                try { da.Fill(dt);
+                    int i = dt.Rows.Count;
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow emptyRow = dt.NewRow();
+                        dt.Rows.InsertAt(emptyRow, i);
+                    }
+                    Frm_Dm_CB.dt_dvc2 = dt; } catch (Exception ex) { }
                 conn.Close();
             }
         }
@@ -55,7 +62,14 @@ namespace Clean_Recycle
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@Units_c2", Units_c2));
                 da = new SqlDataAdapter(cmd); dt = new DataTable();
-                try { da.Fill(dt); Frm_Dm_CB.dt_dvc3 = dt; } catch (Exception ex) { }
+                try { da.Fill(dt);
+                    int i = dt.Rows.Count;
+                    if (dt.Rows.Count > 0)
+                    {
+                        DataRow emptyRow = dt.NewRow();
+                        dt.Rows.InsertAt(emptyRow, i);
+                    }
+                    Frm_Dm_CB.dt_dvc3 = dt; } catch (Exception ex) { }
                 conn.Close();
             }
         }
@@ -69,7 +83,13 @@ namespace Clean_Recycle
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add(new SqlParameter("@Units_c3", Units_c3));
                 da = new SqlDataAdapter(cmd); dt = new DataTable();
-                try { da.Fill(dt); Frm_Dm_CB.dt_dvc4 = dt; } catch (Exception ex) { }
+                try { da.Fill(dt);
+                    int i = dt.Rows.Count;
+                    if (dt.Rows.Count > 0) {
+                        DataRow emptyRow = dt.NewRow();
+                        dt.Rows.InsertAt(emptyRow, i);
+                    }
+                Frm_Dm_CB.dt_dvc4 = dt; } catch (Exception ex) { }
                 conn.Close();
             }
         }

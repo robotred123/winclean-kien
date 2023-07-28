@@ -47,22 +47,27 @@ namespace Clean_Recycle
         private void Load_Dvc2(string Units_c1)
         {
             Select_SQL.Dv_cap2(Units_c1);
-            for (int i = 0; i <= dt_dvc2.Rows.Count; i++)
+            int i;
+            for (i = 0; i <= dt_dvc2.Rows.Count; i++)
             {
                 cb_dvc2.ValueMember = "Units_c2";
                 cb_dvc2.DisplayMember = "Ten_donvi";
                 cb_dvc2.DataSource = dt_dvc2;
             }
+            if(dt_dvc2.Rows.Count == 0) { Load_Dvc3("");  }
         }
         private void Load_Dvc3(string Units_c2)
         {
             Select_SQL.Dv_cap3(Units_c2);
-            for (int i = 0; i <= dt_dvc3.Rows.Count; i++)
+            int i;
+            for (i = 0; i <= dt_dvc3.Rows.Count; i++)
             {
                 cb_dvc3.ValueMember = "Units_c3";
                 cb_dvc3.DisplayMember = "Ten_donvi";
                 cb_dvc3.DataSource = dt_dvc3;
             }
+            if (dt_dvc3.Rows.Count == 0) { Load_Dvc4(""); }
+
         }
         private void Load_Dvc4(string Units_c3)
         {
@@ -71,6 +76,11 @@ namespace Clean_Recycle
             {
                 cb_dvc4.ValueMember = "Units_c4";
                 cb_dvc4.DisplayMember = "Ten_donvi";
+/*                if (dt_dvc4.Rows.Count > 0)
+                {*/
+/*                    DataRow emptyRow = dt_dvc4.NewRow();
+                    dt_dvc4.Rows.InsertAt(emptyRow, 0);*/
+/*                }*/
                 cb_dvc4.DataSource = dt_dvc4;
             }
         }
@@ -148,6 +158,18 @@ namespace Clean_Recycle
                 if (dt_dvc4 != null) {
                     if (dt_dvc4.Rows.Count > 0 & dt_dvc3.Rows.Count > 0 & dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0) { 
                     Select_SQL.Insert_Dm_Canbo(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), cb_dvc4.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
+                    }
+                    else if (dt_dvc3.Rows.Count > 0 & dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0)
+                    {
+                        Select_SQL.Insert_Dm_CanboC3(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), cb_dvc3.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
+                    }
+                    else if (dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0)
+                    {
+                        Select_SQL.Insert_Dm_CanboC2(ID_Ma(), cb_dvc1.SelectedValue.ToString(), cb_dvc2.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
+                    }
+                    else if (dt_dvc1.Rows.Count > 0)
+                    {
+                        Select_SQL.Insert_Dm_CanboC1(ID_Ma(), cb_dvc1.SelectedValue.ToString(), txt_hoten.Text, Environment.MachineName.ToString(), Connect_SQL.mac, txt_chucvu.Text, check_start.ToString());
                     }
                 }
                 else if (dt_dvc3 != null & dt_dvc3.Rows.Count > 0 & dt_dvc2.Rows.Count > 0 & dt_dvc1.Rows.Count > 0)
