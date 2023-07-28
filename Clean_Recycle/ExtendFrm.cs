@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clean_Recycle
 {
-    public partial class Form1 : Form
+    public partial class ExtendFrm : Form
     {
-        public Form1()
+        public ExtendFrm()
         {
             InitializeComponent();
         }

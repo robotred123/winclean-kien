@@ -131,7 +131,7 @@ namespace Clean_Recycle
             this.WindowState = FormWindowState.Normal;
         }
 
-        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        private void guna2CustomGradientPanel1_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -140,7 +140,7 @@ namespace Clean_Recycle
             }
         }
 
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        private void guna2CustomGradientPanel1_MouseMove(object sender, MouseEventArgs e)
         {
             if (isMouseDown)
             {
@@ -150,7 +150,7 @@ namespace Clean_Recycle
             }
         }
 
-        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        private void guna2CustomGradientPanel1_MouseUp(object sender, MouseEventArgs e)
         {
             isMouseDown = false;
         }
